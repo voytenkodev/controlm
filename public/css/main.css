@@ -1,0 +1,124 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.main-block-image{
+    background-image: url('/img/mainimage.jpg');
+    width: 100% auto;
+    height: 93vh;
+    position: relative;
+    z-index: -1;
+}
+.click{
+    color: #000 !important;
+    text-decoration: none;
+}
+.click:hover{
+    text-decoration: none;
+}
+.first-section {
+    padding-top: 5em;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    z-index: 1;
+}
+
+p {
+    color: white;
+    font-size: 1.1em;
+    z-index: 1100;
+}
+
+.left-block {
+    z-index: 1100;
+    text-align: center;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    font-size: 48px;
+    font-variant: small-caps;
+}
+
+.left-block button {
+    font-size: 24px;
+}
+
+#random-text {
+    position: absolute;
+    z-index: 2;
+    opacity: 0.4;
+}
+
+#random-text1 {
+    position: absolute;
+    z-index: 2;
+    opacity: 0.4;
+}
+
+#random-text2 {
+    position: absolute;
+    z-index: 2;
+    opacity: 0.4;
+}
+
+#random-text3 {
+    position: absolute;
+    z-index: 2;
+    opacity: 0.4;
+}
+
+#random-text4 {
+    position: absolute;
+    z-index: 2;
+    opacity: 0.4;
+}
+
+@media(max-width: 1140px){
+    p{
+        font-size: 0.7em;
+    }
+    a{
+        font-size: 0.8em;
+    }
+}
+/* block translation */
+.block-matches-part{
+    background-image: url('/img/rugbymatchblock.jpg');
+    width: 100% auto;
+    height: 100%;
+    position: relative;
+    z-index: -1;
+}
+.text-center{
+    text-align: center;
+    color: black;
+}
+.matches{
+    margin: 0 auto;
+    border: 1px solid rgba(70, 70, 70, 0.322);
+    padding: 1em;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+aside{
+    border: 1px solid rgba(70, 70, 70, 0.322);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+aside iframe{
+    padding-top: 1.3em;
+}
+.block-matches{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media(max-width: 1140px){
+    aside{
+        display: none;
+    }
+}

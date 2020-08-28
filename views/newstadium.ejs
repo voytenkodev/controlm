@@ -1,0 +1,89 @@
+<html lang="ru">
+<head>
+    <%- include('layouts/header'); -%> 
+</head>
+<body class="matches-img">
+    <%- include('layouts/navbar'); -%>
+    <h1 class="text-center">Новый стадион</h1>
+    <hr>
+    <div class="buttons-top">
+        <button type="button" class="btn btn-primary btn-new-match">
+            <a href="/matches">Список матчей</a>
+        </button>
+        <button type="button" class="btn btn-primary btn-new-match">
+            <a href="/stadiums">Список стадионов</a>
+        </button>
+    </div>
+    <!--Main Content-->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mx-auto matches-block">
+                <form action="/stadiums/register" method="POST">
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Название стадиона</label>
+                            <input type="text" class="form-control" 
+                                id="name" name="name"></input>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Город</label>
+                            <input type="text" class="form-control" 
+                                id="city" name="city"></input>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Адрес</label>
+                            <input type="text" class="form-control" 
+                                id="address" name="address"></input>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Ответственный за стадион</label>
+                            <input id="_id%" name="contact" list="contacts" />
+                            <datalist id="contacts">
+                                <% for (var i=0; i < contacts.length; i++) { %>
+                                    <option value="<%=contacts[i].name%>"
+                                        id="<%=contacts[i]._id%>" name="contact"
+                                        >
+                                        <%=contacts[i].name%></option>
+                                <% } %>
+                             </datalist>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Добавить фото</label>
+                            <input type="text" class="form-control" 
+                                id="photo" name="photo"></input>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Интернет</label>
+                            <input type="text" class="form-control" 
+                                id="ethernet" name="ethernet"></input>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Комментарий</label>
+                            <textarea row=5 class="form-control" 
+                                id="comment" name="comment"></textarea>
+                        </div>
+                    </div>
+                <br>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary"
+                        id="sendMessageButton">Добавить стадион</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <%- include('layouts/scripts'); -%>
+</body>
+</html>

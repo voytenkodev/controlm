@@ -1,0 +1,50 @@
+
+<html lang="ru">
+    <%- include('layouts/header'); -%> 
+<body class="matches-img">
+    <%- include('layouts/navbar'); -%>
+    
+    <!--Main Content-->
+    <h1 class="text-center">Стадионы</h1>
+    <hr>
+    <div class="buttons-top">
+
+        <button type="button" class="btn btn-primary btn-new-match">
+            <a href="/matches">Список матчей</a>
+        </button>
+        <button type="button" class="btn btn-primary btn-new-match">
+            <a href="/match/new">Новый матч</a>
+        </button>
+        <button type="button" class="btn btn-primary btn-new-match">
+            <a href="/contacts">Список контактов</a>
+        </button>
+        <button type="button" class="btn btn-primary btn-new-match">
+            <a href="/contacts/new">Новый контакт</a>
+        </button>
+        <button type="button" class="btn btn-primary btn-new-match">
+            <a href="/stadiums/new">Новый стадион</a>
+        </button>
+    </div>
+    <br>
+    <div class="container">
+        <div class="row">
+                <% for (var i = 0;i < stadiums.length; i++) { %>
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xl-4 mx-auto">
+                    <div class="post-preview matches-block">
+                        <a href="/stadium/<%=stadiums[i].id%>" class="match-info">
+                            <h5 class="match-date">
+                                <%=stadiums[i].name %>
+                            </h5>
+                            <h5 class="match-city">
+                                <%=stadiums[i].city %>
+                            </h5>
+                        </a>
+                    </div>
+                    <hr>
+                </div>
+                <% } %>
+        </div>
+    </div>
+    <%- include('layouts/scripts'); -%>
+</body>
+</html>

@@ -1,0 +1,78 @@
+
+<html lang="ru">
+    <%- include('layouts/header'); -%> 
+<body class="matches-img">
+    <%- include('layouts/navbar'); -%>
+    
+    <!--Main Content-->
+    <h1 class="text-center">Календарь</h1>
+    <hr>
+    <div class="buttons-top">
+
+        <button type="button" class="btn btn-primary btn-new-match">
+            <a href="/match/new">Новый матч</a>
+        </button>
+        <button type="button" class="btn btn-primary btn-new-match">
+            <a href="/contacts/new">Новый контакт</a>
+        </button>
+        <button type="button" class="btn btn-primary btn-new-match">
+            <a href="/contacts">Список контактов</a>
+        </button>
+        <button type="button" class="btn btn-primary btn-new-match">
+            <a href="/stadiums">Список стадионов</a>
+        </button>
+    </div>
+    <br>
+    <div class="container">
+        <h2 style="color: white; text-align: center">Предстоящие матчи</h2>
+        <div class="row">
+                <% for (var i = 0;i < matchposts.length; i++) { %>
+                    <% if (currentdate < matchposts[i].date) { %> 
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xl-6 mx-auto">
+                    <div class="post-preview matches-block">
+                        <a href="/match/<%=matchposts[i].id%>" class="match-info">
+                            <h5 class="match-date">
+                                <%=matchposts[i].date %>
+                            </h5>
+                            <h5 class="match-city">
+                                <%=matchposts[i].city %>
+                            </h5>
+                        </a>
+                            <p class="post-meta">Posted by
+                                <a href="#"><%=matchposts[i].userid.username%></a></p>
+                         Match added: <%=matchposts[i].datePosted.toDateString()%>
+                        </p>
+                    </div>
+                    <hr>
+                </div>
+            <% } %>
+                <% } %>
+        </div>
+        <h2 style="color: white; text-align: center">Прошедшие матчи</h2>
+        <div class="row">
+                <% for (var i = 0;i < matchposts.length; i++) { %>
+            <% if (currentdate > matchposts[i].date) { %> 
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xl-6 mx-auto">
+                <div class="post-preview matches-block">
+                    <a href="/match/<%=matchposts[i].id%>" class="match-info">
+                        <h5 class="match-date">
+                            <%=matchposts[i].date %>
+                        </h5>
+                        <h5 class="match-city">
+                            <%=matchposts[i].city %>
+                        </h5>
+                    </a>
+                        <p class="post-meta">Posted by
+                            <a href="#"><%=matchposts[i].userid.username%></a></p>
+                     Match added: <%=matchposts[i].datePosted.toDateString()%>
+                    </p>
+                </div>
+                <hr>
+            </div>
+        <% } %>
+                <% } %>
+        </div>
+    </div>
+    <%- include('layouts/scripts'); -%>
+</body>
+</html>

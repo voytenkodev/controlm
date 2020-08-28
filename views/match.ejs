@@ -1,0 +1,49 @@
+
+<html lang="ru">
+<head>
+    <%- include('layouts/header'); -%> 
+</head>
+<body class="matches-img">
+    <%- include('layouts/navbar'); -%>
+    <!--Page Header-->
+    <div class="overlay">
+
+    </div>
+    <h1 class="text-center">Матч</h1>
+    <hr>
+    <div class="buttons-top">
+        <button type="button" class="btn btn-primary btn-new-match">
+            <a href="/matches">Список матчей</a>
+        </button>
+        <button type="button" class="btn btn-primary btn-new-match">
+            <a href="/match/new">Новый матч</a>
+        </button>
+        <button type="button" class="btn btn-primary btn-new-match">
+            <a href="#">Дополнить информацию</a>
+        </button>
+    </div>
+    <br>
+    <div class="container">
+        <h5 style="color: white">Match added: <%=matchpost.datePosted.toDateString()%></h5>
+        <hr>
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto test text-center matches-block">
+                <h3 style="text-decoration: underline;"><%=matchpost.date%></h3>
+                <h5><%=matchpost.day%> <%=matchpost.time%></h5>
+                <h4 style="text-decoration: underline;"><%=matchpost.league%></h4>
+                <h4><a style="color: rgb(189, 1, 226)"><%=matchpost.team_1%> </a><br class="active">vs<br class="active"> 
+                    <a style="color: rgb(90, 33, 224)"><%=matchpost.team_2%> </a></h4>
+                <h4 style="text-decoration: underline;">Стадион: 
+                    <a href="/stadium/<%=stadiummatch._id%>"><%=stadiummatch.name%></a>
+                </h4>
+                <address><%=matchpost.address%></address>
+                <h5>Комментатор: <a href="/contact/<%=matchcommentator._id%>"><%=matchcommentator.name%></a></h5>
+                <h6>Комментарий: <%=matchpost.comment%></h6>
+                <h5>Интернет: <%=matchpost.ethernet%></h5>
+                <h5><a href="/contact/<%=matchcontact._id%>"><%=matchcontact.name%></a></h5>
+            </div>
+        </div>
+    </div>
+    <%- include('layouts/scripts'); -%>
+</body>
+</html>

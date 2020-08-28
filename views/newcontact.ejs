@@ -1,0 +1,46 @@
+
+<html lang="ru">
+    <head>
+        <%- include('layouts/header'); -%> 
+    </head>
+    <body class="matches-img">
+        <%- include('layouts/navbar'); -%>
+        <!--Main Content-->
+        <div class="page-heading text-center">
+           <h1>Новый контакт</h1>
+        </div>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mx-auto matches-block">
+                    <form action="/contact/register" method="POST">
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls">
+                                <Label>Должность</Label>
+                                <input type="text" class="form-control" placeholder=""
+                                    id="surname" name="surname">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls">
+                                <Label>Имя</Label>
+                                <input type="text" class="form-control" placeholder=""
+                                    id="name" name="name">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls">
+                                <Label>Номер для связи</Label>
+                                <input type="text" class="form-control" placeholder=""
+                                    id="number" name="number">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Добавить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <%- include('layouts/scripts'); -%>
+    </body>
+    </html>

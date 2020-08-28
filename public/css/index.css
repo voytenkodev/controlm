@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@500&display=swap');
+*{
+    font-family: 'Spectral', serif;
+}
+
+header{
+    background: rgb(0,212,255);
+    background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(135,213,255,1) 35%, rgba(111,9,121,1) 100%);
+}
+.right{
+    justify-content: end;
+}
+.text-center{
+    padding: 1em;
+    color: whitesmoke;
+}
+.buttons-top{
+    display: flex;
+    justify-content: center;
+}
+hr{
+    background-color: white;
+}
+.logo{
+    float: left;
+    padding-left: 2em;
+    position: relative;
+    width: 312px;
+    height: 100%;
+}
+@media(max-width: 1200px){
+    .logo{
+        width: 200px;
+        height: 50px;
+    }
+}
+#showMenu{
+    display: none;
+}
+nav{
+    height: 68px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2em;
+    padding-top: 1em;
+}
+ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: flex-end;
+    
+}
+li{
+    padding-right: 2em;
+}
+nav ul li a{
+    font-size: 1.33rem;
+    color: white;
+    text-decoration: none;
+}
+nav ul li a:hover{
+    color: rgb(179, 228, 255);
+    text-decoration: none;
+}
+@media(max-width: 1000px) {
+    ul{
+        display: none;
+    }
+    #showMenu{
+        display: block;
+    }
+}
+
+/* page MATCHES */
+.btn-new-match{
+    margin: 2em;
+}
+.btn-new-match a{
+    color: black;
+    text-decoration: none;
+}
+.match-info{
+    display: flex;
+    justify-content: center;
+}
+.match-info h5{
+    padding: 0.5em;
+}
+.match-meta{
+    display: flex;
+    justify-content: center;
+    margin-bottom: -0.3em;
+}
+.post-preview{
+    border: 1px solid black;
+    padding: 1em;
+}
+.test{
+    border: 2px solid black;
+}
+.active{
+    display: none;
+}
+@media(max-width: 412px){
+    .active{
+        display: block;
+    }
+}
+.matches-img{
+    background-image: url('/img/rugbystadium.jpg');
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.matches-block{
+    border: 1px solid white;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.713);
+    color: white;
+}
+.matches-block a{
+    color: white;
+}
+.matches-block a:hover{
+    color: rgb(159, 223, 253);
+}

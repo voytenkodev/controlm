@@ -1,0 +1,38 @@
+
+<html lang="ru">
+    <head>
+        <%- include('layouts/header'); -%> 
+    </head>
+    <body class="matches-img">
+        <%- include('layouts/navbar'); -%>
+        <!--Page Header-->
+        <div class="overlay">
+    
+        </div>
+        <h1 class="text-center">Контакт</h1>
+        <hr>
+        <div class="buttons-top">
+            <button type="button" class="btn btn-primary btn-new-match">
+                <a href="/matches">Список матчей</a>
+            </button>
+            <button type="button" class="btn btn-primary btn-new-match">
+                <a href="/match/new">Новый матч</a>
+            </button>
+            <button type="button" class="btn btn-primary btn-new-match">
+                <a href="/contacts">Список контактов</a>
+            </button>
+        </div>
+        <br>
+        <div class="container">
+            <hr>
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto test text-center matches-block">
+                    <h3 style="text-decoration: underline;"><%=contact.surname%></h3>
+                    <h5><%=contact.name%></h5>
+                    <h4 style="text-decoration: underline;"><%=contact.number%></h4>
+                </div>
+            </div>
+        </div>
+        <%- include('layouts/scripts'); -%>
+    </body>
+    </html>

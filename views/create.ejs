@@ -1,0 +1,141 @@
+<html lang="ru">
+<head>
+    <%- include('layouts/header'); -%> 
+</head>
+<body class="matches-img">
+    <%- include('layouts/navbar'); -%>
+    <h1 class="text-center">Новый матч</h1>
+    <hr>
+    <div class="buttons-top">
+        <button type="button" class="btn btn-primary btn-new-match">
+            <a href="/matches">Список матчей</a>
+        </button>
+    </div>
+    <!--Main Content-->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mx-auto matches-block">
+                <form action="/matches/store" method="POST">
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Дата</label>
+                            <input type="text" class="form-control" placeholder="8.22 ( БЕЗ НУЛЕЙ )"
+                                id="date" name="date">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Лига</label>
+                            <input type="text" class="form-control" 
+                                id="league" name="league"></input>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Город</label>
+                            <input type="text" class="form-control" 
+                                id="city" name="city"></input>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Стадион</label>
+                            <input id="_id%" name="stadium" list="stadiums" />
+                            <datalist id="stadiums">
+                                <% for (var i=0; i < stadiums.length; i++) { %>
+                                    <option value="<%=stadiums[i].name%>"
+                                        id="<%=contacts[i]._id%>" name="stadium"
+                                        >
+                                        <%=stadiums[i].name%></option>
+                                <% } %>
+                             </datalist>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Адрес</label>
+                            <input type="text" class="form-control" 
+                                id="address" name="address"></input>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Ответственный за стадион</label>
+                            <input id="_id%" name="contact" list="contacts" />
+                            <datalist id="contacts">
+                                <% for (var i=0; i < contacts.length; i++) { %>
+                                    <option value="<%=contacts[i].name%>"
+                                        id="<%=contacts[i]._id%>" name="contact"
+                                        >
+                                        <%=contacts[i].name%></option>
+                                <% } %>
+                             </datalist>
+                        </div>
+                    </div>
+                    <script>
+                        $('select#cities').on('change', function() {
+                        $('input[name="city"]').val(this.value);
+                        });
+                    </script>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Интернет</label>
+                            <input type="text" class="form-control" 
+                                id="ethernet" name="ethernet"></input>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Команда 1</label>
+                            <input type="text" class="form-control" 
+                                id="team_1" name="team_1"></input>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Команда 2</label>
+                            <input type="text" class="form-control" 
+                                id="team_2" name="team_2"></input>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Время по МСК</label>
+                            <input type="datetime" class="form-control" 
+                                id="time" name="time"></input>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Комментатор</label>
+                            <br>
+                            <input id="_id%" name="commentator" list="contacts" />
+                            <datalist id="contacts">
+                                <% for (var i=0; i < contacts.length; i++) { %>
+                                    <option value="<%=contacts[i].name%>"
+                                        id="<%=contacts[i]._id%>" name="contact"
+                                        >
+                                        <%=contacts[i].name%></option>
+                                <% } %>
+                             </datalist>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Комментарий</label>
+                            <textarea row=5 class="form-control" 
+                                id="comment" name="comment"></textarea>
+                        </div>
+                    </div>
+                <br>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary"
+                        id="sendMessageButton">Добавить матч</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <%- include('layouts/scripts'); -%>
+</body>
+</html>
