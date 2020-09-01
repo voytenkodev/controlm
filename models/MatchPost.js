@@ -5,18 +5,7 @@ const MatchPostSchema = new Schema({
     date: String,
     league: String,
     city: String,
-    stadium: String,
-    address: {
-        type: mongoose.Schema.Types.String,
-        ref: 'Stadium',
-        required: true,
-    },
-    contact: {
-        type: mongoose.Schema.Types.String,
-        ref: 'Stadium',
-        required: true,
-    },
-    ethernet: {
+    stadium: {
         type: mongoose.Schema.Types.String,
         ref: 'Stadium',
         required: true,

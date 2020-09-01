@@ -5,20 +5,20 @@ const MatchStadium = require('../models/Stadium.js')
 module.exports = async(req, res) => {
     const matchpost = await (await MatchPost.findById(req.params.id)).populate('userid');
     
-    const matchcontact = await (await MatchStadium.aggregate([
-        { $match: {name: contact}},
-        { $project: {name: 1}}
-    ]))[0]
     const matchcommentator = await (await MatchContact.aggregate([
         { $match: {name: matchpost.commentator}},
         { $project: {name: 1}}
     ]))[0]
     const stadiummatch = await (await MatchStadium.aggregate([
         { $match: {name: matchpost.stadium}},
-        { $project: {name: 1}}
+        { $project: {name: 1, _id: 0}}
     ]))[0]
+    const stadium = await (await MatchStadium.aggregate([
+        { $match: {name: stadiummatch.name}}
+    ]))
     res.render('match', {
-        matchpost, matchcontact, matchcommentator, stadiummatch
+        matchpost, matchcommentator, stadiummatch,
+        stadium
     });
 }
 
