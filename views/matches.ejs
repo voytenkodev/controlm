@@ -12,19 +12,10 @@
         <button type="button" class="btn btn-primary btn-new-match">
             <a href="/match/new">Новый матч</a>
         </button>
-        <button type="button" class="btn btn-primary btn-new-match">
-            <a href="/contacts/new">Новый контакт</a>
-        </button>
-        <button type="button" class="btn btn-primary btn-new-match">
-            <a href="/contacts">Список контактов</a>
-        </button>
-        <button type="button" class="btn btn-primary btn-new-match">
-            <a href="/stadiums">Список стадионов</a>
-        </button>
     </div>
     <br>
     <div class="container">
-        <h2 style="color: white; text-align: center">Предстоящие матчи</h2>
+        <h2 style="color: rgb(0, 0, 0); text-align: center">Предстоящие матчи</h2>
         <div class="row">
                 <% for (var i = 0;i < matchposts.length; i++) { %>
                     <% if (currentdate < matchposts[i].date) { %> 
@@ -37,6 +28,8 @@
                             <h5 class="match-city">
                                 <%=matchposts[i].city %>
                             </h5>
+                            <h4><a style="color: rgb(189, 1, 226)"><%=matchposts[i].team_1%> </a><br class="active">vs<br class="active"> 
+                                <a style="color: rgb(90, 33, 224)"><%=matchposts[i].team_2%> </a></h4>
                         </a>
                             <p class="post-meta">Posted by
                                 <a href="#"><%=matchposts[i].userid.username%></a></p>
@@ -48,11 +41,11 @@
             <% } %>
                 <% } %>
         </div>
-        <h2 style="color: white; text-align: center">Прошедшие матчи</h2>
+        <h2 style="color: rgb(0, 0, 0); text-align: center">Прошедшие матчи</h2>
         <div class="row">
                 <% for (var i = 0;i < matchposts.length; i++) { %>
             <% if (currentdate > matchposts[i].date) { %> 
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xl-6 mx-auto">
+                <div class="col-lg-8 col-md-10 col-sm-10 col-xl-10 mx-auto">
                 <div class="post-preview matches-block">
                     <a href="/match/<%=matchposts[i].id%>" class="match-info">
                         <h5 class="match-date">
@@ -61,11 +54,15 @@
                         <h5 class="match-city">
                             <%=matchposts[i].city %>
                         </h5>
+                        <h5 class="match-city">
+                            <%=matchposts[i].league %>
+                        </h5>
+                        <div style="text-align: center">
+                            <h4><a style="color: rgb(189, 1, 226)"><%=matchposts[i].team_1%> </a><br class="active">vs<br class="active"> 
+                                <a style="color: rgb(90, 33, 224)"><%=matchposts[i].team_2%> </a></h4>
+                        </div>
+                        
                     </a>
-                        <p class="post-meta">Posted by
-                            <a href="#"><%=matchposts[i].userid.username%></a></p>
-                     Match added: <%=matchposts[i].datePosted.toDateString()%>
-                    </p>
                 </div>
                 <hr>
             </div>
