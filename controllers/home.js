@@ -1,7 +1,7 @@
 const MatchPost = require('../models/MatchPost.js')
 
 module.exports = async(req, res) => {
-    const matchposts = await MatchPost.find({}).populate('userid');
+    const matchposts = await MatchPost.find({}).populate('date');
     var date = new Date()
     var month = date.getMonth() + 1
     var day = date.getDate()
