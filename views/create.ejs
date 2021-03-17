@@ -19,7 +19,7 @@
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             <label>Дата</label>
-                            <input type="text" class="form-control" placeholder="8.22 ( БЕЗ НУЛЕЙ )"
+                            <input type="text" class="form-control" placeholder="05.09.1994"
                                 id="date" name="date">
                         </div>
                     </div>
@@ -80,6 +80,22 @@
                     </div>
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
+                            <label>Ответственный</label>
+                            <br>
+                            <div class="dropdown">
+                                <select id="_id%" name="responsible" >
+                                    <% for (var i=0; i < contacts.length; i++) { %>
+                                    <option value="<%=contacts[i].name%>"
+                                            id="<%=contacts[i]._id%>" name="responsible"
+                                    >
+                                        <%=contacts[i].name%></option>
+                                    <% } %>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
                             <label>Комментатор</label>
                             <br>
                             <div class="dropdown">
@@ -92,6 +108,13 @@
                                     <% } %>
                                 </select>
                             </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Локация комментатора</label>
+                            <input type="text" class="form-control"
+                                   id="commentator_location" name="commentator_location"></input>
                         </div>
                     </div>
                     <div class="control-group">

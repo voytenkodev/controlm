@@ -13,11 +13,17 @@ const MatchPostSchema = new Schema({
     team_1: String,
     team_2: String,
     time: String,
+    responsible: {
+        type: mongoose.Schema.Types.String,
+        ref: 'Contact',
+        required: true,
+    },
     commentator: {
         type: mongoose.Schema.Types.String,
         ref: 'Contact',
         required: true,
     },
+    commentator_location: String,
     comment: String,
     userid: {
         type: mongoose.Schema.Types.ObjectId,
@@ -28,6 +34,7 @@ const MatchPostSchema = new Schema({
         type: Date,
         default: new Date()
     },
+    canceled: Boolean
 });
 
 const MatchPost = mongoose.model('MatchPost',MatchPostSchema);

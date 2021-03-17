@@ -11,7 +11,7 @@ module.exports = async(req, res) => {
     ]))[0]
     const stadiummatch = await (await MatchStadium.aggregate([
         { $match: {name: matchpost.stadium}},
-        { $project: {name: 1, _id: 0}}
+        { $project: {name: 1}}
     ]))[0]
     const stadium = await (await MatchStadium.aggregate([
         { $match: {name: stadiummatch.name}}

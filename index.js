@@ -1,9 +1,6 @@
 const mongoose = require('mongoose')
 const express = require('express')
-const path = require('path')
 const bodyParser = require('body-parser')
-const ejs = require('ejs')
-const MatchPost = require('./models/MatchPost')
 const fileUpload = require('express-fileupload')
 const validateMiddleWare = require('./middleware/validationMiddleware')
 const newMatchController = require('./controllers/newMatch')
@@ -31,7 +28,7 @@ const app = new express()
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
-mongoose.connect('mongodb+srv://voytenkodev:hayden317amidalarampage@cluster0.6ecyt.mongodb.net/signaltv_db', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://voytenkodev:hayden317amidalarampage@cluster0.6ecyt.mongodb.net/signaltv_db', {useNewUrlParser: true})
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(fileUpload())
@@ -48,7 +45,7 @@ app.use("*", (req, res, next) => {
 });
 app.use(flash());
 
-app.listen(4000,() => {
+app.listen(3000,() => {
     console.log('App listening on port 4000')
 })
 app.get('/matches', homeController)
@@ -61,9 +58,9 @@ app.get('/pagenotfound',(req, res) => {
 app.get('/match/new', authMiddleware,newMatchController,)
 app.get('/match/:id', getMatchController)
 app.post('/matches/store', authMiddleware, storeMatchController)
-/*
+
 app.get('/auth/register', redirectifAuthenticatedMiddleware, newUserController)
-*/
+
 app.post('/users/register',  redirectifAuthenticatedMiddleware, storeUserController)
 app.get('/auth/login',  redirectifAuthenticatedMiddleware, loginController)
 app.post('/users/login',  redirectifAuthenticatedMiddleware, loginUserController)
