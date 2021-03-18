@@ -45,8 +45,8 @@ app.use("*", (req, res, next) => {
 });
 app.use(flash());
 
-app.listen(3001,() => {
-    console.log('App listening on port 4000')
+app.listen(3000,() => {
+    console.log('ok')
 })
 app.get('/matches', homeController)
 app.get('/',(req, res) => {
