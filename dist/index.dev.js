@@ -79,7 +79,7 @@ app.use("*", function (req, res, next) {
   next();
 });
 app.use(flash());
-app.listen(4002, function () {
+app.listen(4001, function () {
   console.log('App listening on port 4000');
 });
 app.get('/matches', homeController);

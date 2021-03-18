@@ -42,16 +42,18 @@
                     </div>
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
-                            <label>Ответственный за стадион</label>
-                            <input id="_id%" name="contact" list="contacts" />
-                            <datalist id="contacts">
-                                <% for (var i=0; i < contacts.length; i++) { %>
-                                    <option value="<%=contacts[i].name%>"
-                                        id="<%=contacts[i]._id%>" name="contact"
-                                        >
-                                        <%=contacts[i].name%></option>
-                                <% } %>
-                             </datalist>
+                            <label>Ответсвенный за стадион</label>
+                            <br>
+                            <div class="dropdown">
+                                <select id="_id%" name="contact" >
+                                    <% for (var i=0; i < contacts.length; i++) { %>
+                                        <option value="<%=contacts[i].name%>"
+                                            id="<%=contacts[i]._id%>" name="contact"
+                                            >
+                                            <%=contacts[i].name%></option>
+                                    <% } %>
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <div class="control-group">

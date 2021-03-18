@@ -4,10 +4,10 @@ body{
 }
 .main-block-image{
     background-image: url('/img/mainimage.jpg');
-    width: 100% auto;
-    height: 93vh;
-    position: relative;
-    z-index: -1;
+    -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%; /* Современные браузеры */
 }
 .click{
     color: #000 !important;

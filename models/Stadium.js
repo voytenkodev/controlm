@@ -8,7 +8,7 @@ const stadiumSchema = new Schema({
     contact: {
         type: mongoose.Schema.Types.String,
         ref: 'Contact',
-        required: true,
+        required: true
     },
     photo: String,
     ethernet: String,
