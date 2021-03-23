@@ -48,7 +48,7 @@ app.use(flash());
 app.listen(3000,() => {
     console.log('ok')
 })
-app.get('/matches', homeController)
+app.get('/matches', authMiddleware, homeController)
 app.get('/',(req, res) => {
     res.render('index');
 })
@@ -56,7 +56,7 @@ app.get('/pagenotfound',(req, res) => {
     res.render('pagenoutfound');
 })
 app.get('/match/new', authMiddleware,newMatchController,)
-app.get('/match/:id', getMatchController)
+app.get('/match/:id', authMiddleware, getMatchController)
 app.post('/matches/store', authMiddleware, storeMatchController)
 
 app.get('/auth/register', redirectifAuthenticatedMiddleware, newUserController)
@@ -66,14 +66,14 @@ app.get('/auth/login',  redirectifAuthenticatedMiddleware, loginController)
 app.post('/users/login',  redirectifAuthenticatedMiddleware, loginUserController)
 app.get('/auth/logout', logoutController)
 
-app.get('/contacts/new', newContact)
+app.get('/contacts/new', authMiddleware, newContact)
 app.post('/contact/register', contactStore)
-app.get('/contacts', contacts)
-app.get('/contact/:id', getContactController)
+app.get('/contacts', authMiddleware, contacts)
+app.get('/contact/:id', authMiddleware, getContactController)
 
-app.get('/stadiums/new', newStadium)
+app.get('/stadiums/new', authMiddleware, newStadium)
 app.post('/stadiums/register', stadiumStore)
-app.get('/stadiums', stadiums)
-app.get('/stadium/:id', getStadiumController)
+app.get('/stadiums',authMiddleware,  stadiums)
+app.get('/stadium/:id', authMiddleware, getStadiumController)
 
 app.use((req, res) => res.render('notfound'))

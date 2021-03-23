@@ -3,7 +3,6 @@
     <%- include('layouts/header'); -%> 
 <body class="matches-img">
     <%- include('layouts/navbar'); -%>
-    <% if(loggedIn) { %>
     <!--Main Content-->
     <h1 class="text-center">Стадионы</h1>
     <hr>
@@ -36,10 +35,6 @@
                 <% } %>
         </div>
     </div>
-    <% } %>
-    <% if(!loggedIn) { %>
-        <h3> Зайдите в систему для просмотра расписания </h3>
-    <% } %>
     <%- include('layouts/scripts'); -%>
 </body>
 </html>
