@@ -3,7 +3,11 @@ const Schema = mongoose.Schema;
 
 const MatchPostSchema = new Schema({
     date: String,
-    league: String,
+    league: {
+        type: mongoose.Schema.Types.String,
+        ref: 'League',
+        required: true,
+    },
     city: String,
     stadium: {
         type: mongoose.Schema.Types.String,

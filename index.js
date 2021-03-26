@@ -24,11 +24,15 @@ const newStadium = require('./controllers/newStadium')
 const stadiumStore = require('./controllers/storeStadiums')
 const stadiums = require('./controllers/stadiums')
 const getStadiumController = require('./controllers/getStadium')
+const leagues = require('./controllers/leagues')
+const newLeague = require('./controllers/newLeague')
+const leagueStore = require('./controllers/storeLeague')
+const getLeague = require('./controllers/getLeague')
 const app = new express()
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
-mongoose.connect('mongodb+srv://voytenkodev:hayden317amidalarampage@cluster0.6ecyt.mongodb.net/signaltv_db', {useNewUrlParser: true})
+mongoose.connect('mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false/test', {useNewUrlParser: true})
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(fileUpload())
@@ -45,7 +49,7 @@ app.use("*", (req, res, next) => {
 });
 app.use(flash());
 
-app.listen(3001,() => {
+app.listen(3000,() => {
     console.log('ok')
 })
 app.get('/matches', authMiddleware, homeController)
@@ -75,5 +79,10 @@ app.get('/stadiums/new', authMiddleware, newStadium)
 app.post('/stadiums/register', stadiumStore)
 app.get('/stadiums',authMiddleware,  stadiums)
 app.get('/stadium/:id', authMiddleware, getStadiumController)
+
+app.get('/league/new', authMiddleware, newLeague)
+app.post('/league/register', leagueStore)
+app.get('/leagues', authMiddleware, leagues)
+app.get('/league/:id', authMiddleware, getLeague)
 
 app.use((req, res) => res.render('notfound'))

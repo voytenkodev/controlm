@@ -1,0 +1,35 @@
+
+<html lang="ru">
+<%- include('layouts/header'); -%>
+<body class="matches-img">
+<%- include('layouts/navbar'); -%>
+<!--Main Content-->
+<h1 class="text-center">Лиги</h1>
+<hr>
+<div class="buttons-top">
+
+    <button type="button" class="btn btn-primary btn-new-match">
+        <a href="/league/new">Новый лига</a>
+    </button>
+</div>
+<br>
+<div class="container">
+    <div class="row">
+        <% for (var i = 0;i < leagues.length; i++) { %>
+            <div class="col-lg-8 col-md-10 col-sm-10 col-xl-10 mx-auto">
+                <div class="post-preview matches-block">
+                    <a href="/league/<%=leagues[i].id%>" class="match-info">
+                        <h5 class="league-name">
+                            <%=leagues[i].name %>
+                        </h5>
+                    </a>
+                </div>
+                <hr>
+            </div>
+
+        <% } %>
+    </div>
+</div>
+<%- include('layouts/scripts'); -%>
+</body>
+</html>

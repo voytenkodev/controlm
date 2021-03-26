@@ -1,0 +1,46 @@
+
+<html lang="ru">
+<%- include('layouts/header'); -%>
+<body class="matches-img">
+<%- include('layouts/navbar'); -%>
+<!--Main Content-->
+<h1 class="text-center">Календарь</h1>
+<hr>
+<div class="buttons-top">
+
+    <button type="button" class="btn btn-primary btn-new-match">
+        <a href="/match/new">Новый матч</a>
+    </button>
+</div>
+<br>
+<div class="container">
+    <h2 style="color: rgb(0, 0, 0); text-align: center">Предстоящие матчи</h2>
+    <div class="row">
+        <% for (var i = 0;i < matchesinleague.length; i++) { %>
+
+            <div class="col-lg-8 col-md-10 col-sm-10 col-xl-10 mx-auto">
+                <div class="post-preview matches-block">
+                    <a href="/match/<%=matchesinleague[i].id%>" class="match-info">
+                        <h5 class="match-date">
+                            <%=matchesinleague[i].date %>
+                        </h5>
+                        <h5 class="match-city">
+                            <%=matchesinleague[i].city %>
+                        </h5>
+                        <h5 class="match-city">
+                            <%=matchesinleague[i].league %>
+                        </h5>
+                        <div style="text-align: center">
+                            <h4><a style="color: rgb(189, 1, 226)"><%=matchesinleague[i].team_1%> </a><br class="active">vs<br class="active">
+                                <a style="color: rgb(90, 33, 224)"><%=matchesinleague[i].team_2%> </a></h4>
+                        </div>
+                    </a>
+                </div>
+                <hr>
+            </div>
+        <% } %>
+    </div>
+</div>
+<%- include('layouts/scripts'); -%>
+</body>
+</html>

@@ -26,8 +26,17 @@
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             <label>Лига</label>
-                            <input type="text" class="form-control" 
-                                id="league" name="league"></input>
+                            <br>
+                            <div class="dropdown">
+                                <select id="_id%" name="league" >
+                                    <% for (var i=0; i < leagues.length; i++) { %>
+                                    <option value="<%=leagues[i].name%>"
+                                            id="<%=leagues[i]._id%>" name="responsible"
+                                    >
+                                        <%=leagues[i].name%></option>
+                                    <% } %>
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <div class="control-group">

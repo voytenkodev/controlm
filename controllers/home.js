@@ -7,7 +7,6 @@ module.exports = async(req, res) => {
     var day = date.getDate()
     var year = date.getFullYear()
     var currentdate = day + '.' + month + '.' +  year
-    console.log(matchposts)
     res.render('matches',{
         matchposts, currentdate
     });
