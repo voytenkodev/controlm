@@ -13,7 +13,7 @@ module.exports = async(req, res) => {
         { $match: {name: matches.league}},
         { $project: {name: 1}}
     ]))[0]
-    console.log(matchesinleague)
+
     res.render('league', {
         matchesinleague
     });
