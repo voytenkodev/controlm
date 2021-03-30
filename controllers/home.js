@@ -6,8 +6,12 @@ module.exports = async(req, res) => {
     var month = date.getMonth() + 1
     var day = date.getDate()
     var year = date.getFullYear()
-    var currentdate = day + '.' + month + '.' +  year
-    res.render('matches',{
+    var monthtostring = month.toString()
+    if (monthtostring.length < 2){
+        month = '0' + monthtostring
+    }
+    var currentdate =  year + '.' + month + '.' + day
+        res.render('matches',{
         matchposts, currentdate
     });
 }

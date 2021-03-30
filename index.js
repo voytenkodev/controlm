@@ -32,7 +32,7 @@ const app = new express()
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
-mongoose.connect('mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false/test', {useNewUrlParser: true})
+mongoose.connect('mongodb+srv://voytenkodev:hayden317amidalarampage@cluster0.6ecyt.mongodb.net/signaltv_db', {useNewUrlParser: true})
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(fileUpload())
