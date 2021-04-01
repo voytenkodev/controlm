@@ -10,7 +10,13 @@ module.exports = async(req, res) => {
     if (monthtostring.length < 2){
         month = '0' + monthtostring
     }
+    var daytostring = day.toString()
+    if (daytostring.length < 2){
+        day = '0' + daytostring
+    }
+    console.log(monthtostring)
     var currentdate =  year + '.' + month + '.' + day
+    console.log(currentdate)
         res.render('matches',{
         matchposts, currentdate
     });
