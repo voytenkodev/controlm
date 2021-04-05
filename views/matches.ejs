@@ -49,7 +49,7 @@
         <h2 style="color: rgb(0, 0, 0); text-align: center">Прошедшие матчи</h2>
         <div class="row">
                 <% for (var i = 0;i < matchposts.length; i++) { %>
-            <% if (currentdate > matchposts[i].date) { %>
+            <% if (currentdate >= matchposts[i].date) { %>
                 <div class="col-lg-8 col-md-10 col-sm-10 col-xl-10 mx-auto">
                 <div class="post-preview matches-block">
                     <a href="/match/<%=matchposts[i].id%>" class="match-info">
