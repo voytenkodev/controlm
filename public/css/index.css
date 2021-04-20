@@ -1,128 +1,118 @@
-@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@500&display=swap');
-*{
-    font-family: 'Spectral', serif;
+
+body{
+    background: #E5E5E5;
 }
 
-header{
-    background: rgb(0,212,255);
-    background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(135,213,255,1) 35%, rgba(111,9,121,1) 100%);
-}
-.right{
-    justify-content: end;
-}
-.text-center{
-    padding: 1em;
-    color: rgb(0, 0, 0);
-}
-.buttons-top{
-    display: flex;
-    justify-content: center;
-}
-hr{
-    background-color: white;
-}
-.logo{
-    float: left;
-    padding-left: 2em;
+.main-text{
     position: relative;
-    width: 312px;
-    height: 100%;
+    width: 234px;
+    height: 24px;
+
+
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #000000;
+    margin-bottom: -0.5rem;
 }
-@media(max-width: 1200px){
-    .logo{
-        width: 200px;
-        height: 50px;
-    }
-}
-#showMenu{
-    display: none;
-}
-nav{
-    height: 68px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 2em;
-    padding-top: 1em;
-}
-ul{
-    display: flex;
-    list-style-type: none;
-    justify-content: flex-end;
-    
-}
-li{
-    padding-right: 2em;
-}
-nav ul li a{
-    font-size: 1.33rem;
-    color: white;
+.add-match{
+    text-align: center;
+    position: relative;
+    color: #000000;
     text-decoration: none;
-}
-nav ul li a:hover{
-    color: rgb(179, 228, 255);
-    text-decoration: none;
-}
-@media(max-width: 1000px) {
-    ul{
-        display: none;
-    }
-    #showMenu{
-        display: block;
-    }
+    font-size: 52px;
+    display: flex;
+    justify-content: center;
+
 }
 
-/* page MATCHES */
-.btn-new-match{
-    margin: 2em;
+.matches-block{
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    margin-left: 21px;
+    margin-bottom: 21px;
 }
-.btn-new-match a{
-    color: black;
+.matches{
+    display: flex;
+    justify-content: center;
+}
+a{
     text-decoration: none;
 }
-.match-info{
+a:hover{
+    color: #000000;
+}
+.icon{
+    width: 25px;
+    padding-right: 0.5rem;
+}
+
+.fst-part{
+    padding-top: 1rem;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-left: 0.5rem;
 }
-.match-info h5{
-    padding: 0.5em;
+.fst-part h5{
+    padding-right: 1.3rem;
+    text-decoration: none;
 }
-.match-meta{
+.text{
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
     display: flex;
-    justify-content: center;
-    margin-bottom: -0.3em;
+    align-items: center;
 }
-.post-preview{
-    border: 1px solid black;
-    padding: 1em;
+
+.tst-part{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0.5rem;
 }
-.test{
-    border: 2px solid black;
+.vs{
+    color:black;
+    display: flex;
+    align-items: center;
 }
-.active{
-    display: none;
+.team2{
+    text-align: end;
 }
-@media(max-width: 412px){
-    .active{
-        display: block;
-    }
+.team{
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
 }
-.matches-img{
-    background-image: url('/img/mainimage1.jpg');
-    -moz-background-size: 100%; /* Firefox 3.6+ */
-    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
-    -o-background-size: 100%; /* Opera 9.6+ */
-    background-size: 100%; /* Современные браузеры */
+.match-league{
+    margin-top: -1.2rem;
+    margin-left: 0.5rem;
+    color: black;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: normal;
+    padding-top: 0.3rem;
+    padding-bottom: 1rem;
 }
-.matches-block{
-    border: 1px solid white;
-    border-radius: 15px;
-    background-color: rgba(0, 0, 0, 0.815);
-    color: white;
+.location{
+    color: black;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: normal;
+    position: unset;
+    bottom: 0;
 }
-.matches-block a{
-    color: white;
-}
-.matches-block a:hover{
-    color: rgb(159, 223, 253);
+.last-part{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }

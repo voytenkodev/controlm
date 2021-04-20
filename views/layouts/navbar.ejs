@@ -1,49 +1,164 @@
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a href="/"> <img class="logo navbar-brand" src="/img/Logo.png" alt="Сигнал ТВ"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse right" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-                
-                    <li class="nav-item">
-                    <a class="nav-link" href="/">Главная</a>
-                </li>
-                <!--
-                <li class="nav-item">
-                    <a class="nav-link" href="/about">О нас</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contacts">Контакты</a>
-                </li>
-                -->
-                <% if(loggedIn) { %>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/matches">Матчи</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/stadiums">Стадионы</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contacts">Контакты</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/leagues">Лиги</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/auth/logout">Выйти</a>
-                    </li>
-                <% } %>
-                <% if(!loggedIn) { %>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/auth/login">Войти</a>
-                    </li>
-                <% } %>
-            </ul>
-        </div>
-        
+<div id="header" class="navbar">
+    <a href="/" alt="Сигнал" class="logo">{{ logo }}</a>
+    <button class="gotomobilemenu" @click="showMenu"><span>&#8801;</span></button>
+    <nav class="mainMenu">
+        <ul>
+            <% if(loggedIn) { %>
+            <li><a href="/matches">Матчи</a></li>
+            <li><a href="/stadiums">Стадионы</a></li>
+            <li><a href="/contacts">Контакты</a></li>
+        </ul>
+        <ul class="logInfo">
+            <li><a href="/auth/logout">Выйти</a></li>
+            <% } %>
+            <% if(!loggedIn) { %>
+            <li><a href="/auth/login">Войти</a></li>
+            <% } %>
+        </ul>
+    </nav>
+    <nav class="mobile-menu" v-show="showMobMenu">
+        <ul>
+            <% if(loggedIn) { %>
+            <li><a href="/matches">Матчи</a></li>
+            <li><a href="/stadiums">Стадионы</a></li>
+            <li><a href="contacts">Контакты</a></li>
+        </ul>
+        <ul class="logInfo">
+            <li><a href="/auth/logout">Выйти</a></li>
+            <% } %>
+            <% if(!loggedIn) { %>
+            <li><a href="/auth/login">Войти</a></li>
+            <% } %>
+        </ul>
+    </nav>
+</div>
 
-      </nav>
-</header>
+<script>
+    var app = new Vue({
+        el: '#header',
+        data: {
+            showMobMenu: false,
+            logo: 'SIGNAL',
+        },
+        methods: {
+            showMenu() {
+                if (this.isActive == false) {
+                    this.isActive = true
+                    this.showMobMenu = false
+                } else {
+                    this.isActive = false
+                    this.showMobMenu = true
+                }
+            }
+        },
+        
+    });
+</script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+    *{
+        font-family: 'Montserrat', sans-serif;
+    }
+    .gotomobilemenu {
+        border: 2px solid black;
+        border-radius: 10%;
+        font-size: 1.5rem;
+    }
+    @media(max-width: 1080px) {
+        .mainMenu {
+            display: none;
+        }
+    }
+    .mobile-menu {
+        position: fixed;
+        background: black;
+        top: 80px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .mobile-menu ul {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+    .mobile-menu ul li {
+        padding-top: 20px;
+    }
+    .mobile-menu li a {
+        color: white;
+    }
+    .mobile-menu li a:hover{
+        color: rgb(216, 216, 216);
+    }
+    @media(min-width: 1081px) {
+        .gotomobilemenu{
+            display: none;
+        }
+        .mobile-menu{
+            display: none;
+        }
+    }
+    .active{
+        position: relative;
+        background-color: black;
+        display: none;
+    }
+    .navbar{
+        position: relative;
+        width: 99%;
+        height: 80px;
+        background: #FFFFFF;
+        border: 1px solid #E8E8E8;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .logo{
+        position: relative;
+        width: 234px;
+        height: 53px;
+        color: #000000;
+        font-family: Montsterrat;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 49px;
+        text-decoration: none;
+    }
+    .logo:hover{
+        color: #000000;
+        text-decoration: none;
+        list-style-type: none;
+    }
+    nav{
+        position: relative;
+        display: flex;
+    }
+    ul{
+        display: flex;
+    }
+    ul li{
+        text-decoration: none;
+        list-style-type: none;
+    }
+    li a{
+        color: #000000;
+        font-size: 20px;
+        line-height: 24px;
+        padding-right: 57px;
+        top: 33px;
+        text-decoration: none;
+    }
+    li a:hover{
+        color: #000000;
+        text-decoration: none;
+    }
+</style>

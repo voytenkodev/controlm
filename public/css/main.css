@@ -1,15 +1,9 @@
+/*
 body{
     margin: 0px;
     padding: 0px;
 }
-.main-block-image{
-    background-image: url('/img/mainimage.jpg');
-    -moz-background-size: 100%; /* Firefox 3.6+ */
-    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
-    -o-background-size: 100%; /* Opera 9.6+ */
-    background-size: 100%; /* Современные браузеры */
-}
-.click{
+click{
     color: #000 !important;
     text-decoration: none;
 }
@@ -46,36 +40,6 @@ p {
     font-size: 24px;
 }
 
-#random-text {
-    position: absolute;
-    z-index: 2;
-    opacity: 0.4;
-}
-
-#random-text1 {
-    position: absolute;
-    z-index: 2;
-    opacity: 0.4;
-}
-
-#random-text2 {
-    position: absolute;
-    z-index: 2;
-    opacity: 0.4;
-}
-
-#random-text3 {
-    position: absolute;
-    z-index: 2;
-    opacity: 0.4;
-}
-
-#random-text4 {
-    position: absolute;
-    z-index: 2;
-    opacity: 0.4;
-}
-
 @media(max-width: 1140px){
     p{
         font-size: 0.7em;
@@ -85,6 +49,7 @@ p {
     }
 }
 /* block translation */
+/*
 .block-matches-part{
     background-image: url('/img/rugbymatchblock.jpg');
     width: 100% auto;
@@ -122,3 +87,4 @@ aside iframe{
         display: none;
     }
 }
+*/
