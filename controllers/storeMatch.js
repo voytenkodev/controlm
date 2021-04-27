@@ -18,7 +18,7 @@ module.exports = async (req, res) => {
     {
       text: `Добавили новый матч. Город: ${req.body.city}, Дата: ${req.body.date}. Подробности: http://95.165.12.181/matches`,
       from: "rugby@signal-tv.com",
-      to: "voytenkodev@gmail.com",
+      to: "rugby@a4-agency.ru",
       subject: "Новый матч",
     },
     (err, message) => {
