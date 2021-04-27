@@ -9,8 +9,8 @@ module.exports = async (req, res) => {
   });
   alert('add match')
   const client = new SMTPClient({
-    user: "rugby@signal-tv.com",
-    password: "ytcemzrcsqmrdhim",
+    user: "voytenkodev",
+    password: "ccpvkzpmbhzzoaac",
     host: "smtp.yandex.ru",
     ssl: true,
   },
@@ -21,8 +21,8 @@ module.exports = async (req, res) => {
   client.send(
     {
       text: "Add match",
-      from: "rugby@signal-tv.com",
-      to: "voytenkodev@yandex.ru",
+      from: "voytenkodev@yandex.ru",
+      to: "voytenkodev@gmail.com",
       subject: "test",
     },
     (err, message) => {
