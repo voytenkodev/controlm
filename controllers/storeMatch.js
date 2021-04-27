@@ -1,3 +1,5 @@
+const { SMTPClient } = require('emailjs');
+
 const MatchPost = require("../models/MatchPost");
 
 module.exports = async (req, res) => {
@@ -5,5 +7,26 @@ module.exports = async (req, res) => {
     ...req.body,
     userid: req.session.userId,
   });
+  console.log('MATCH ADD')
+  const client = new SMTPClient({
+    user: "voytenkodev",
+    password: "ccpvkzpmbhzzoaac",
+    host: "smtp.yandex.ru",
+    ssl: true,
+  });
+
+  console.log('mail check')
+  client.send(
+    {
+      text: "Add match",
+      from: "voytenkodev@yandex.ru",
+      to: "voytenkodev@gmail.com",
+      subject: "test",
+    },
+    (err, message) => {
+      console.log(err || message);
+    }
+  );
+  console.log('email send')
   res.redirect("/matches");
 };

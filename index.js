@@ -49,7 +49,7 @@ app.use("*", (req, res, next) => {
 });
 app.use(flash());
 
-app.listen(3000,() => {
+app.listen(3001,() => {
     console.log('ok')
 })
 app.get('/matches', authMiddleware, homeController)
