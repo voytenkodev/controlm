@@ -14,7 +14,7 @@ module.exports = async (req, res) => {
     host: "smtp.yandex.ru",
     port: 465
   });
-  console.log('CHECK MAIL')
+  alert('OK')
   client.send(
     {
       text: "Add match",
