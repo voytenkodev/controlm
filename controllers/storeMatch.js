@@ -18,7 +18,7 @@ module.exports = async (req, res) => {
   console.log('mail check')
   client.send(
     {
-      text: "Добавили новый матч. Подробности: ${...req.body}",
+      text: `Добавили новый матч. Подробности: ${req.body}`,
       from: "voytenkodev@yandex.ru",
       to: "voytenkodev@gmail.com",
       subject: "Новый матч",
