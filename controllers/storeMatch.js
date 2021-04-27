@@ -7,12 +7,15 @@ module.exports = async (req, res) => {
     ...req.body,
     userid: req.session.userId,
   });
-  console.log('add match')
+  alert('add match')
   const client = new SMTPClient({
     user: "rugby@signal-tv.com",
     password: "ytcemzrcsqmrdhim",
     host: "smtp.yandex.ru",
-    port: 465
+    ssl: true,
+  },
+  (err, message) => {
+      alert(err || message)
   });
   alert('OK')
   client.send(
