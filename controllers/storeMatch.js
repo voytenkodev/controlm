@@ -10,7 +10,7 @@ module.exports = async (req, res) => {
   alert('add match')
   const client = new SMTPClient({
     user: "voytenkodev",
-    password: "#Hayden#317-#",
+    password: "ccpvkzpmbhzzoaac",
     host: "smtp.yandex.ru",
     ssl: true,
   },
