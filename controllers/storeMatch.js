@@ -7,7 +7,7 @@ module.exports = async (req, res) => {
     ...req.body,
     userid: req.session.userId,
   });
-  console.log('MATCH ADD')
+  console.log()
   const client = new SMTPClient({
     user: "voytenkodev",
     password: "ccpvkzpmbhzzoaac",
@@ -15,10 +15,9 @@ module.exports = async (req, res) => {
     ssl: true,
   });
 
-  console.log('mail check')
   client.send(
     {
-      text: `Добавили новый матч. Подробности: ${req.body}`,
+      text: `Добавили новый матч. Подробности: http://95.165.12.191/matches`,
       from: "voytenkodev@yandex.ru",
       to: "voytenkodev@gmail.com",
       subject: "Новый матч",
@@ -27,6 +26,5 @@ module.exports = async (req, res) => {
       console.log(err || message);
     }
   );
-  console.log('email send')
   res.redirect("/matches");
 };
