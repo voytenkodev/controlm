@@ -12,7 +12,6 @@ module.exports = async (req, res) => {
     user: "rugby@signal-tv.com",
     password: "ytcemzrcsqmrdhim",
     host: "smtp.yandex.ru",
-    ssl: true,
     port: 465
   });
   console.log('CHECK MAIL')
