@@ -7,18 +7,17 @@ module.exports = async (req, res) => {
     ...req.body,
     userid: req.session.userId,
   });
-  console.log()
   const client = new SMTPClient({
-    user: "voytenkodev",
-    password: "ccpvkzpmbhzzoaac",
+    user: "rugby@signal-tv.com",
+    password: "msjnplqzotnfgwss",
     host: "smtp.yandex.ru",
     ssl: true,
   });
 
   client.send(
     {
-      text: `Добавили новый матч. Подробности: http://95.165.12.191/matches`,
-      from: "voytenkodev@yandex.ru",
+      text: `Добавили новый матч. Город: ${req.body.city}, Дата: ${req.body.date}. Подробности: http://95.165.12.181/matches`,
+      from: "rugby@signal-tv.com",
       to: "voytenkodev@gmail.com",
       subject: "Новый матч",
     },
