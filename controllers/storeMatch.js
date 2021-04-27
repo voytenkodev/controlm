@@ -18,10 +18,10 @@ module.exports = async (req, res) => {
   console.log('mail check')
   client.send(
     {
-      text: "Add match",
+      text: "Добавили новый матч. Подробности: ${...req.body}",
       from: "voytenkodev@yandex.ru",
       to: "voytenkodev@gmail.com",
-      subject: "test",
+      subject: "Новый матч",
     },
     (err, message) => {
       console.log(err || message);
